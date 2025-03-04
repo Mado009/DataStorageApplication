@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 public class UploadRequest {
     [Required(ErrorMessage = "File is required.")]
+    [FileExtensions(Extensions = "jpg,jpeg,png,pdf,doc,docx", ErrorMessage = "Invalid file type. Allowed types: jpg, jpeg, png, pdf, doc, docx.")]
     public IFormFile File { get; set; }
 
     [Required(ErrorMessage = "Dropdown selection is required.")]

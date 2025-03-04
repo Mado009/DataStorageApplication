@@ -50,6 +50,9 @@ nupkg/
 *.userosscache
 *.sln.docstates
 
+#Log files
+logs/*
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

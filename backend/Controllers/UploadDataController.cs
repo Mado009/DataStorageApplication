@@ -26,11 +26,6 @@ public class UploadController : ControllerBase {
 
         var fileName = await _blobService.UploadFileAsync(request.File);
 
-        var allowedExtensions = new[] { ".jpg", ".png", ".jpeg" };
-        if (!allowedExtensions.Contains(Path.GetExtension(fileName).ToLower()))
-            return BadRequest(new { message = "Only .jpg, .png, and .jpeg files are allowed." });
-
-
         var metadata = new {
             FileName = fileName,
             Dropdown = request.Dropdown,
@@ -43,6 +38,6 @@ public class UploadController : ControllerBase {
         await _blobService.UploadMetadataAsync(fileName, metadata);
 
         return Ok(new { message = "File uploaded successfully", 
-            fileUrl = $"https://yourbloburl/{fileName}" });
+            fileUrl = $"https://mado.blob.core.windows.net/uploads/{fileName}" });
     }
 }

@@ -1,0 +1,49 @@
+2025-03-04 16:44:22.601 +01:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-04 16:44:25.030 +01:00 [INF] Now listening on: https://localhost:7235
+2025-03-04 16:44:25.040 +01:00 [INF] Now listening on: http://localhost:5087
+2025-03-04 16:44:25.085 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-04 16:44:25.098 +01:00 [INF] Hosting environment: Development
+2025-03-04 16:44:25.107 +01:00 [INF] Content root path: C:\Users\User\source\repos\DataStorage\backend\
+2025-03-04 16:44:27.917 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5087/api/auth/login - -
+2025-03-04 16:44:31.879 +01:00 [INF] Request: OPTIONS /api/auth/login
+2025-03-04 16:44:31.913 +01:00 [INF] CORS policy execution successful.
+2025-03-04 16:44:31.934 +01:00 [INF] HTTP OPTIONS /api/auth/login responded 204 in 33.0314 ms
+2025-03-04 16:44:31.964 +01:00 [INF] Response: 204
+2025-03-04 16:44:32.006 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5087/api/auth/login - - - 204 - - 4138.8237ms
+2025-03-04 16:44:32.044 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5087/api/auth/login application/json 42
+2025-03-04 16:44:33.334 +01:00 [INF] Request: POST /api/auth/login
+2025-03-04 16:44:33.340 +01:00 [INF] CORS policy execution successful.
+2025-03-04 16:44:36.312 +01:00 [ERR] HTTP POST /api/auth/login responded 500 in 2971.6983 ms
+System.ArgumentException: IDX10703: Cannot create a 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', key length is zero.
+   at Microsoft.IdentityModel.Tokens.SymmetricSecurityKey..ctor(Byte[] key)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in C:\Users\User\source\repos\DataStorage\backend\Program.cs:line 36
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-03-04 16:44:36.456 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: IDX10703: Cannot create a 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', key length is zero.
+   at Microsoft.IdentityModel.Tokens.SymmetricSecurityKey..ctor(Byte[] key)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in C:\Users\User\source\repos\DataStorage\backend\Program.cs:line 36
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Program.<>c__DisplayClass0_0.<<<Main>$>b__3>d.MoveNext() in C:\Users\User\source\repos\DataStorage\backend\Program.cs:line 60
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2025-03-04 16:44:36.497 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5087/api/auth/login application/json 42 - 500 - text/plain;+charset=utf-8 4453.4231ms

@@ -25,11 +25,9 @@ export async function uploadFile(file, dropdown, inputText, freeText) {
             }
         });
 
-        console.log("✅ Upload successful!", response.data);
         return { success: true, data: response.data };
 
     } catch (error) {
-        console.error("❌ Upload failed!", error.response ? error.response.data : error);
         return { error: error.response ? error.response.data : "Upload failed!" };
     }
 }
