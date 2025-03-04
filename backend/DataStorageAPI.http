@@ -1,0 +1,12 @@
+﻿@DataStorageAPI_HostAddress = https://localhost:7235
+
+POST {{DataStorageAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "password"
+}
+
+
+###
